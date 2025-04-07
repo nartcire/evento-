@@ -1,4 +1,3 @@
-import { EventDetails } from "@/lib/types";
 import H1 from "@/components/H1";
 import Image from "next/image";
 import { Metadata } from "next";

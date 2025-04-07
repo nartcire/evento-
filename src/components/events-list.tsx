@@ -1,5 +1,4 @@
 import EventCard from "./event-card";
-import { EventoEvent } from "@/lib/types";
 import { getEvents } from "@/lib/utils";
 
 type EventsListProps = {
