@@ -1,7 +1,7 @@
 import H1 from "@/components/H1";
 import Image from "next/image";
 import { Metadata } from "next";
-import { getEvent } from "@/lib/utils";
+import { getEvent } from "@/lib/server-utils";
 
 type Props = {
   params: {
@@ -16,6 +16,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: event.name,
   };
+}
+
+export async function generateStaticParams() {
+  return [
+    {
+      slugs: "comedy-extravaganza",
+    },
+    {
+      slugs: "dj-practice-session",
+    },
+  ];
 }
 
 export default async function EventPage({ params }: Props) {

@@ -1,13 +1,13 @@
 import EventCard from "./event-card";
 import PaginationControls from "./pagination-controls";
-import { getEvents } from "@/lib/utils";
+import { getEvents } from "@/lib/server-utils";
 
 type EventsListProps = {
   city: string;
-  page: number;
+  page?: number;
 };
 
-export default async function EventsList({ city, page }: EventsListProps) {
+export default async function EventsList({ city, page = 1 }: EventsListProps) {
   const { events, totalCount } = await getEvents(city, page);
 
   const previousPath = page > 1 ? `/events/${city}?page=${page - 1}` : "";
